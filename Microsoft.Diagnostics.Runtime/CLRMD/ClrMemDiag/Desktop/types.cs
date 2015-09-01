@@ -145,7 +145,7 @@ namespace Microsoft.Diagnostics.Runtime.Desktop
                     name = builder.ToString();
             }
 
-            if (!m_heap.m_interfaces.TryGetValue(name, out result))
+            if (name != null && !m_heap.m_interfaces.TryGetValue(name, out result))
             {
                 ClrInterface type = null;
                 if (extends != 0 && extends != 0x01000000)
